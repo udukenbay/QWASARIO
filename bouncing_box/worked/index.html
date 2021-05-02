@@ -1,0 +1,54 @@
+<html style='background-color: black'>
+    <body>
+        <div id="my_bouncing_box" style= "background-color: blue; border-radius: 3px; position: absolute; left: 0px; top: 0px; min-width: 100px; min-height: 100px; text-align: center; font-weight: bold; color: #999;" >dukenbay_u</div>
+        <script type="text/javascript">
+            
+            var dx = 20;
+            var dy = 20;
+            var x = 0;
+            var y = 0;
+            xPos = 'left';
+            yPos = 'top';
+            
+            var mBox = document.getElementById("my_bouncing_box");
+            mBox.style.maxWidth = 100;
+            mBox.style.maxHeight = 100;
+
+            setInterval(move, 700);
+
+            maxWidth = window.innerWidth;
+            maxHeight = window.innerHeight;
+
+            function move() {
+                
+                //boundary logic
+                if(x < 0) {
+                    dx=-dx;
+                    xPos='right';
+                }
+
+                if(x >= maxWidth-100) {
+                    dx = -1 * dx;
+                    xPos='left';
+                }
+
+                if(y < 0) {
+                    dy=-dy;
+                    yPos = 'bottom';
+                }
+                
+                if(y >= maxHeight-100) {
+                    dy=-dy;
+                    yPos='top';
+                }
+
+                x+=dx;
+                y+=dy;
+
+                mBox.style.left = mBox.offsetLeft + dx + 'px';
+                mBox.style.top = mBox.offsetTop + dy + 'px';
+            }
+        </script>
+    </body>
+  
+</html>

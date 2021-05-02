@@ -1,0 +1,19 @@
+<html>
+    <div id="my_box_realtime" style= "background-color: red; position: absolute; right: 70; bottom: 70; min-width: 100px; min-height: 100px"></div>
+    <script type="text/javascript">
+
+    var box = document.getElementById("my_box_realtime");  
+    var index = 70;
+    var time = setInterval(frame, 500);
+    
+    function frame() {
+        if(index == 0){
+            clearInterval(time);
+        }else {
+            box.style.right = index;
+            box.style.bottom = index;
+            index--;
+        }
+    }
+    </script>
+</html>
